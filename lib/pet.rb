@@ -15,7 +15,7 @@ module BrighterPlanet
           end
           
           quorum 'default' do
-            fallback.diet_emission_intensity
+            ::Pet.fallback.diet_emission_intensity
           end
         end
         
@@ -31,7 +31,7 @@ module BrighterPlanet
           end
     
           quorum 'default' do
-            fallback.marginal_dietary_requirement
+            ::Pet.fallback.marginal_dietary_requirement
           end
         end
         
@@ -41,7 +41,7 @@ module BrighterPlanet
           end
     
           quorum 'default' do
-            fallback.fixed_dietary_requirement
+            ::Pet.fallback.fixed_dietary_requirement
           end
         end
         
@@ -61,7 +61,7 @@ module BrighterPlanet
           end
     
           quorum 'default' do
-            fallback.weight
+            ::Pet.fallback.weight
           end
         end
         
