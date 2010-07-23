@@ -51,7 +51,7 @@ module BrighterPlanet
           
           committee :weight do # kg
             quorum 'from breed and gender', :needs => [:breed, :gender] do |characteristics|
-              if breed_gender = BreedGender.find_by_breed_id_and_gender_id(characteristics[:breed], characteristics[:gender])
+              if breed_gender = BreedGender.find_by_breed_name_and_gender_name(characteristics[:breed], characteristics[:gender])
                 breed_gender.weight
               end
             end

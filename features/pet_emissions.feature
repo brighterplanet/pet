@@ -9,4 +9,4 @@ Feature: Pet Emissions Calculations
     Then the emission value should be within 0.1 kgs of <emission>
     Examples:
       | species | breed  | gender | emission |
-      |     dog | Collie | female |    753.2 |
+      |     dog | Collie | female |   2272.4 |

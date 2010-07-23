@@ -9,4 +9,4 @@ Feature: Pet Committee Calculations
     Then the diet_size committee should be close to <diet_size>, +/-1
     Examples:
       | species | breed  | gender | diet_size |
-      |     dog | Collie | female |    753.2 |
+      |     dog | Collie | female | 5296105.0 |
