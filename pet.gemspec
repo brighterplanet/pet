@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{pet}
-  s.version = "0.0.2"
+  s.version = "0.0.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Andy Rossmeissl", "Seamus Abshere", "Ian Hough", "Matt Kling", "Derek Kastner"]
@@ -35,6 +35,7 @@ Gem::Specification.new do |s|
   s.test_files = [
     "features/support/env.rb",
      "features/pet_committees.feature",
+     "features/pet_emissions.feature",
      "lib/test_support/db/schema.rb",
      "lib/test_support/pet_record.rb"
   ]
