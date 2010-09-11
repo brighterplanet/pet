@@ -6,7 +6,7 @@ Feature: Pet Emissions Calculations
     And it has "breed.name" of "<breed>"
     And it has "gender.name" of "<gender>"
     When emissions are calculated
-    Then the emission value should be within 0.1 kgs of <emission>
+    Then the emission value should be within "0.1" kgs of "<emission>"
     Examples:
       | species | breed  | gender | emission |
       |     dog | Collie | female |   2272.4 |
