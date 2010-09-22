@@ -1,11 +1,9 @@
-require 'leap'
 require 'weighted_average'
 
 module BrighterPlanet
   module Pet
     module CarbonModel
       def self.included(base)
-        base.extend ::Leap::Subject
         base.decide :emission, :with => :characteristics do
           committee :emission do
             quorum 'from diet size', :needs => [:diet_size, :diet_emission_intensity, :active_subtimeframe] do |characteristics, timeframe|
@@ -19,7 +17,7 @@ module BrighterPlanet
             end
             
             quorum 'default' do
-              Pet.pet_model.fallback.diet_emission_intensity
+              base.fallback.diet_emission_intensity
             end
           end
           
@@ -35,7 +33,7 @@ module BrighterPlanet
             end
       
             quorum 'default' do
-              Pet.pet_model.fallback.marginal_dietary_requirement
+              base.fallback.marginal_dietary_requirement
             end
           end
           
@@ -45,7 +43,7 @@ module BrighterPlanet
             end
       
             quorum 'default' do
-              Pet.pet_model.fallback.fixed_dietary_requirement
+              base.fallback.fixed_dietary_requirement
             end
           end
           
@@ -65,7 +63,7 @@ module BrighterPlanet
             end
       
             quorum 'default' do
-              Pet.pet_model.fallback.weight
+              base.fallback.weight
             end
           end
           
