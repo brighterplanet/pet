@@ -3,15 +3,8 @@ require 'emitter'
 module BrighterPlanet
   module Pet
     extend BrighterPlanet::Emitter
-
-    def self.pet_model
-      if Object.const_defined? 'Pet'
-        ::Pet
-      elsif Object.const_defined? 'PetRecord'
-        PetRecord
-      else
-        raise 'There is no pet model'
-      end
+    def weight_range
+      species.minimum_weight..species.maximum_weight if species
     end
   end
 end

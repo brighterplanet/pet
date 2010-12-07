@@ -3,7 +3,7 @@ module BrighterPlanet
     module Summarization
       def self.included(base)
         base.summarize do |has|
-          has.adjective lambda { |pet| "#{pet.weight_in_pounds.adaptive_round}-pound"}, :if => :weight
+          has.adjective lambda { |pet| "#{pet.weight.convert(:kilograms, :pounds).round(1)}-pound"}, :if => :weight
           has.adjective [:gender, :name], :if => :gender
           has.adjective [:breed, :name], :if => :breed
           has.identity [:species, :name], :if => :species
