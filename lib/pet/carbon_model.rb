@@ -21,7 +21,9 @@ module BrighterPlanet
             end
             
             quorum 'default' do
-              base.fallback.diet_emission_intensity
+              # sabshere 2/10/11 pulled from Species.fallback
+              # kg CO2 / joule
+              Species.weighted_average :diet_emission_intensity, :weighted_by => :population
             end
           end
           
@@ -37,7 +39,8 @@ module BrighterPlanet
             end
       
             quorum 'default' do
-              base.fallback.marginal_dietary_requirement
+              # sabshere 2/10/11 pulled from Species.fallback
+              Species.marginal_dietary_requirement_fallback
             end
           end
           
@@ -47,7 +50,9 @@ module BrighterPlanet
             end
       
             quorum 'default' do
-              base.fallback.fixed_dietary_requirement
+              # sabshere 2/10/11 pulled from Species.fallback
+              # force a zero intercept to be respectful of our tiny tiny animal friends
+              0.0
             end
           end
           
@@ -67,7 +72,9 @@ module BrighterPlanet
             end
       
             quorum 'default' do
-              base.fallback.weight
+              # sabshere 2/10/11 pulled from Species.fallback
+              # kg
+              Species.weighted_average :weight, :weighted_by => :population
             end
           end
           
