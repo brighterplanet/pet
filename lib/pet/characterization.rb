@@ -7,7 +7,7 @@ module BrighterPlanet
             species.reveals :breed
           end
           has :gender
-          has :weight, :range => :weight_range.to_proc, :measures => :mass
+          has :weight, :range => :weight_range.to_proc #, :measures => :mass
           has :acquisition # TODO andy test start year
           has :retirement
         end
