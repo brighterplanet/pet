@@ -3,11 +3,10 @@ module BrighterPlanet
     module Characterization
       def self.included(base)
         base.characterize do
-          has :species do |species|
-            species.reveals :breed
-          end
+          has :species
+          has :breed
           has :gender
-          has :weight, :range => :weight_range.to_proc #, :measures => :mass
+          has :weight, :range => :weight_range.to_proc, :measures => :mass
           has :acquisition # TODO andy test start year
           has :retirement
         end
