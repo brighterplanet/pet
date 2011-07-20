@@ -2,7 +2,7 @@ module BrighterPlanet
   module Pet
     module Data
       def self.included(base)
-        base.create_table do
+        base.force_schema do
           string   'name'
           string  'species_id'
           string  'breed_id'
