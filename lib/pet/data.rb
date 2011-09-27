@@ -2,15 +2,13 @@ module BrighterPlanet
   module Pet
     module Data
       def self.included(base)
-        base.force_schema do
-          string   'name'
-          string  'species_id'
-          string  'breed_id'
-          string  'gender_id'
-          float    'weight'
-          date     'acquisition'
-          date     'retirement'
-        end
+        base.col :name
+        base.col :species_id
+        base.col :breed_id
+        base.col :gender_id
+        base.col :weight, :type => :float
+        base.col :acquisition, :type => :date
+        base.col :retirement, :type => :date
 
         base.data_miner do
           process "pull orphans" do

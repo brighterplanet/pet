@@ -6,10 +6,10 @@ require 'weighted_average'
 
 module BrighterPlanet
   module Pet
-    module CarbonModel
+    module ImpactModel
       def self.included(base)
-        base.decide :emission, :with => :characteristics do
-          committee :emission do
+        base.decide :impact, :with => :characteristics do
+          committee :carbon do
             quorum 'from diet size', :needs => [:diet_size, :diet_emission_intensity, :active_subtimeframe] do |characteristics, timeframe|
               characteristics[:active_subtimeframe].days * characteristics[:diet_size] * characteristics[:diet_emission_intensity] + ANNUAL_VETERINARY_EMISSION * (characteristics[:active_subtimeframe] / timeframe.year)
             end
