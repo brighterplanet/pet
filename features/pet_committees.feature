@@ -1,6 +1,9 @@
 Feature: Pet Committee Calculations
   The pet model should generate correct committee calculations
 
+  Background:
+    Given a pet
+
   Scenario Outline: Diet Size Committee
     Given characteristic "species.name" of "<species>"
     And characteristic "breed.name" of "<breed>"

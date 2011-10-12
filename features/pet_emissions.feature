@@ -1,6 +1,9 @@
 Feature: Pet Emissions Calculations
   The pet model should generate correct emission calculations
 
+  Background:
+    Given a pet
+
   Scenario Outline: Standard Calculations for pet
     Given it has "species.name" of "<species>"
     And it has "breed.name" of "<breed>"
