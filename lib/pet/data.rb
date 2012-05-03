@@ -2,7 +2,6 @@ module BrighterPlanet
   module Pet
     module Data
       def self.included(base)
-        base.col :name
         base.col :species_id
         base.col :breed_id
         base.col :gender_id
