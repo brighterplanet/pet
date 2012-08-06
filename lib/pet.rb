@@ -1,5 +1,11 @@
 require 'emitter'
 
+require 'pet/impact_model'
+require 'pet/characterization'
+require 'pet/data'
+require 'pet/relationships'
+require 'pet/summarization'
+
 module BrighterPlanet
   module Pet
     extend BrighterPlanet::Emitter
