@@ -1,3 +1,7 @@
+require 'earth/pet/breed_gender'
+require 'earth/pet/gender'
+require 'earth/pet/species'
+
 module BrighterPlanet
   module Pet
     module Relationships

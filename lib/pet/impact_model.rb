@@ -2,6 +2,9 @@
 # See LICENSE for details.
 # Contact Brighter Planet for dual-license arrangements.
 
+require 'earth/pet/breed_gender'
+require 'earth/pet/species'
+
 require 'weighted_average'
 
 module BrighterPlanet
